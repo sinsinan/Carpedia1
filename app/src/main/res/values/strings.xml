@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Caroscope</string>
+    <string name="search_using_filters">Use Filters</string>
+    <string name="search_by_name">Search</string>
+    <string name="title_activity_filter">FilterActivity</string>
+    <string name="choose_the_filters_to_be_applied">Choose the Filters to be Applied</string>
+    <string-array name="type_array">
+        <item>SUV</item>
+        <item>Sedan</item>
+        <item>HatchBack</item>
+    </string-array>
+    <string-array name="company_array">
+        <item>Honda</item>
+        <item>Hyundai</item>
+        <item>Maruti Suzuki</item>
+        <item>Audi</item>
+        <item>Mercedes</item>
+    </string-array>
+    <string-array name="price_array">
+        <item>Below 4 Lakhs</item>
+        <item>4 Lakhs - 9 Lakhs</item>
+        <item>10 Lakhs - 15 Lakhs</item>
+        <item>16 Lakhs - 20 Lakhs</item>
+        <item>Above 20 Lakhs</item>
+    </string-array>
+
+    <string-array name="transmission_array">
+        <item>Manual</item>
+        <item>Automatic</item>
+    </string-array>
+
+    <string-array name="fuel_array">
+        <item>Petrol</item>
+        <item>Diesel</item>
+        <item>Hybrid</item>
+        <item>Electric</item>
+    </string-array>
+    <string name="type_prompt">Type of Car</string>
+    <string name="company_prompt">Company</string>
+    <string name="title_car_list">Cars</string>
+    <string name="title_car_detail">Car Detail</string>
+    <string name="search">search</string>
+    <string name="use_filters">use filters</string>
+    <string name="apply">APPLY</string>
+</resources>
