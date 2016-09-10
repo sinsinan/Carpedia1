@@ -4,14 +4,23 @@ package com.sin.com.carpedia;
  * Created by sin on 7/9/16.
  */
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseAccess {
+
+
+
+
+
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase database;
     private static DatabaseAccess instance;
@@ -38,6 +47,7 @@ public class DatabaseAccess {
         return instance;
     }
 
+
     /**
      * Open the database connection.
      */
@@ -59,15 +69,20 @@ public class DatabaseAccess {
      *
      * @return a List of quotes
      */
-    public List<String> getQuotes() {
+
+    public List<String> getQuotes(String value){
+
+
         List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("SELECT * FROM CARINFO", null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like ?", new String[] { value }, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(cursor.getString(1));
+            list.add(cursor.getString(2)+" "+cursor.getString(1));
             cursor.moveToNext();
         }
         cursor.close();
         return list;
     }
+
+
 }

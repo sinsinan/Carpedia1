@@ -15,6 +15,14 @@ public class filter extends AppCompatActivity {
     public void sendMessage(View view)
     {
         Intent intent = new Intent(filter.this, carlist.class);
+        String value=("%");
+
+        Bundle bundle = new Bundle();
+
+        bundle.putString("value", value);
+
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 }

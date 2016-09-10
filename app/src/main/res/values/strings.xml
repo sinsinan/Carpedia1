@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Caroscope</string>
+    <string name="app_name">Carpedia</string>
     <string name="search_using_filters">Use Filters</string>
     <string name="search_by_name">Search</string>
     <string name="title_activity_filter">FilterActivity</string>

@@ -15,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".filter"/>
-
-        <activity android:name=".carlist"/>
+        <activity android:name=".filter" />
+        <activity android:name=".carlist" />
+        <activity android:name=".search"></activity>
     </application>
 
 </manifest>

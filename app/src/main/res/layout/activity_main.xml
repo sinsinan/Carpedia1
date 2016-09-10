@@ -10,7 +10,7 @@
     tools:context="com.sin.com.carpedia.MainActivity"
     android:background="#FFFFFF"
     android:contextClickable="false"
-    android:clickable="false">
+    android:clickable="true">
 
     <Button
         android:layout_width="370dp"
