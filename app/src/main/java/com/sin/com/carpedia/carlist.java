@@ -49,6 +49,7 @@ public class carlist extends AppCompatActivity
         Bundle bundle2 = getIntent().getExtras();
         String[] name = bundle2.getStringArray("name");
         String[] company = bundle2.getStringArray("company");
+        String[] price = bundle2.getStringArray("price");
         List<Integer> imageidl=bundle2.getIntegerArrayList("imageidl");
         setContentView(R.layout.activity_carlist);
 
@@ -65,7 +66,7 @@ public class carlist extends AppCompatActivity
 
             rowItems = new ArrayList<RowItem>();
             for (int i = 0; i < company.length; i++) {
-                RowItem item = new RowItem(imageid[i], company[i], name[i]);
+                RowItem item = new RowItem(imageid[i], company[i], name[i], price[i]);
                 rowItems.add(item);
             }
 

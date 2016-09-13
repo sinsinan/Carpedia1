@@ -3,8 +3,10 @@ package com.sin.com.carpedia;
 /**
  * Created by sin on 7/9/16.
  */
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import android.database.Cursor;
@@ -14,11 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.content.Context;
 public class DatabaseAccess {
-
-
-
 
 
     private SQLiteOpenHelper openHelper;
@@ -70,19 +69,162 @@ public class DatabaseAccess {
      * @return a List of quotes
      */
 
-    public List<String> getQuotes(String value){
+    public String[] getQuotename(String value) {
 
+        List<String> namel = new ArrayList<String>();
 
-        List<String> list = new ArrayList<>();
-        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like ?", new String[] { value }, null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like '"+value+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            list.add(cursor.getString(2)+" "+cursor.getString(1));
+
+            namel.add(cursor.getString(1));
             cursor.moveToNext();
+
         }
         cursor.close();
-        return list;
+
+        String[] name = new String[namel.size()];
+        name = namel.toArray(name);
+
+        return name;
     }
 
 
+    public String[] getQuotecompany(String value) {
+
+        List<String> companyl = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like '"+value+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+
+            companyl.add(cursor.getString(2));
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+        String[] company = new String[companyl.size()];
+        company = companyl.toArray(company);
+        return company;
+    }
+
+
+    public List<Integer> getQuoteimageid(String value, Context context) {
+        List<Integer> imageidl = new ArrayList<Integer>();
+        String url;
+        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like '"+value+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            url = "car" + cursor.getString(0) + "";
+            imageidl.add(context.getResources().getIdentifier(url, "drawable", DatabaseAccess.class.getPackage().getName()));
+
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+
+        return imageidl;
+
+    }
+
+
+    public String[] getQuoteprice(String value) {
+
+        List<String> pricel = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where SEARCH like '"+value+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+
+            pricel.add("Price :" + cursor.getString(4));
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+        String[] price = new String[pricel.size()];
+        price = pricel.toArray(price);
+        return price;
+
+
+    }
+
+    public String[] getQuotenamef(String types,String companys,String prices,String transmissions,String fuels)
+    {
+        List<String> namel = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+
+            namel.add(cursor.getString(1));
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+
+        String[] name = new String[namel.size()];
+        name = namel.toArray(name);
+
+        return name;
+    }
+
+
+
+    public String[] getQuotecompanyf(String types,String companys,String prices,String transmissions,String fuels) {
+
+        List<String> companyl = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+
+            companyl.add(cursor.getString(2));
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+        String[] company = new String[companyl.size()];
+        company = companyl.toArray(company);
+        return company;
+    }
+
+
+    public List<Integer> getQuoteimageidf(String types,String companys,String prices,String transmissions,String fuels,Context context) {
+        List<Integer> imageidl = new ArrayList<Integer>();
+        String url;
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            url = "car" + cursor.getString(0) + "";
+            imageidl.add(context.getResources().getIdentifier(url, "drawable", DatabaseAccess.class.getPackage().getName()));
+
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+
+        return imageidl;
+
+    }
+
+
+    public String[] getQuotepricef(String types,String companys,String prices,String transmissions,String fuels) {
+
+        List<String> pricel = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+
+            pricel.add("Price :" + cursor.getString(4));
+            cursor.moveToNext();
+
+        }
+        cursor.close();
+        String[] price = new String[pricel.size()];
+        price = pricel.toArray(price);
+        return price;
+
+
+    }
 }

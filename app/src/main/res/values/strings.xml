@@ -5,16 +5,28 @@
     <string name="title_activity_filter">FilterActivity</string>
     <string name="choose_the_filters_to_be_applied">Choose the Filters to be Applied</string>
     <string-array name="type_array">
-        <item>SUV</item>
+
+        <item>Hatchback</item>
+
         <item>Sedan</item>
-        <item>HatchBack</item>
+        <item>SUV</item>
+        <item>Luxury</item>
+        <item>None</item>
+
     </string-array>
     <string-array name="company_array">
         <item>Honda</item>
         <item>Hyundai</item>
-        <item>Maruti Suzuki</item>
+        <item>Maruti</item>
         <item>Audi</item>
-        <item>Mercedes</item>
+        <item>Renault</item>
+        <item>BMW</item>
+        <item>Jaguar</item>
+        <item>Mercedes-Benz</item>
+        <item>Mahindra</item>
+        <item>Volkswagen</item>
+        <item>Tata</item>
+        <item>None</item>
     </string-array>
     <string-array name="price_array">
         <item>Below 4 Lakhs</item>
@@ -22,11 +34,13 @@
         <item>10 Lakhs - 15 Lakhs</item>
         <item>16 Lakhs - 20 Lakhs</item>
         <item>Above 20 Lakhs</item>
+        <item>None</item>
     </string-array>
 
     <string-array name="transmission_array">
         <item>Manual</item>
         <item>Automatic</item>
+        <item>None</item>
     </string-array>
 
     <string-array name="fuel_array">
@@ -34,8 +48,12 @@
         <item>Diesel</item>
         <item>Hybrid</item>
         <item>Electric</item>
+        <item>None</item>
     </string-array>
     <string name="type_prompt">Type of Car</string>
+    <string name="price_prompt">Price of Car</string>
+    <string name="transmission_prompt">Transmission type</string>
+    <string name="fuel_prompt">Fuel</string>
     <string name="company_prompt">Company</string>
     <string name="title_car_list">Cars</string>
     <string name="title_car_detail">Car Detail</string>
