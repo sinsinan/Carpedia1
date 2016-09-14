@@ -227,4 +227,27 @@ public class DatabaseAccess {
 
 
     }
+
+
+    public String[] getQuotedata(String name) {
+
+        List<String> datalist = new ArrayList<String>();
+
+        Cursor cursor = database.rawQuery("select * from CARINFO where NAME like '"+name+"'", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            for (int i = 0; 1 < 14; i++) {
+                datalist.add(cursor.getString(i));
+            }
+
+
+        }
+        cursor.close();
+
+        String[] data = new String[datalist.size()];
+        data = datalist.toArray(data);
+
+        return data;
+
+    }
 }
