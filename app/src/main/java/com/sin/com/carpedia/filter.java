@@ -14,14 +14,14 @@ import java.util.List;
 public class filter extends AppCompatActivity {
 Button button3;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.filter);
         addListenerOnButton();
     }
-    public void addListenerOnButton() {
+    public void addListenerOnButton()
+    {
         final DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         final Context context = this;
 
