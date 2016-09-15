@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/imageid"
         android:paddingBottom="10dp"
-        android:textColor="#090cb7"
+        android:textColor="#CC0033"
         android:focusable="false"
 
 
@@ -56,10 +56,20 @@
         android:layout_below="@+id/name"
         android:layout_toRightOf="@+id/imageid"
         android:focusable="false"
-
-
-        android:textColor="#3399FF"
+        android:textColor="#fd5c5c5c"
         android:textSize="22dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id = "@+id/textView3"
+        android:layout_alignBottom="@+id/imageid"
+        android:layout_toRightOf="@+id/imageid"
+        android:layout_toEndOf="@+id/imageid"
+        android:focusable="false"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+    />
 </RelativeLayout>
     </android.support.v7.widget.CardView>
 

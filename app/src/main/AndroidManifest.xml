@@ -4,18 +4,18 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
         </activity>
         <activity android:name=".filter" />
         <activity android:name=".carlist" />
         <activity android:name=".search" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".Splashscreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

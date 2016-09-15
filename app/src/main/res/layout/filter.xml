@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+android:layout_height="match_parent">
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +12,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sin.com.carpedia.filter">
+    tools:context="com.sin.com.carpedia.filter"
+    android:nestedScrollingEnabled="true">
 
     <Spinner
         android:layout_width="match_parent"
@@ -19,12 +23,14 @@
         android:spinnerMode="dropdown"
         android:entries="@array/type_array"
         android:prompt="@string/type_prompt"
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
 
         android:layout_alignParentEnd="true"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="center"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:foreground="#000000" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -33,7 +39,7 @@
         android:layout_centerVertical="true"
 
 
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:spinnerMode="dropdown"
         android:entries="@array/company_array"
         android:prompt="@string/company_prompt"
@@ -41,7 +47,8 @@
         android:layout_marginTop="30dp"
         android:nestedScrollingEnabled="true"
         android:layout_alignParentEnd="false"
-        android:gravity="center_vertical|center_horizontal" />
+        android:gravity="center"
+        android:foregroundGravity="center_vertical|center_horizontal" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -51,16 +58,17 @@
         android:prompt="@string/price_prompt"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/spinner1"
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:entries="@array/price_array"
         android:nestedScrollingEnabled="true"
-        android:gravity="center_vertical|center_horizontal" />
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:gravity="center" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/spinner3"
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:entries="@array/transmission_array"
         android:prompt="@string/transmission_prompt"
         android:spinnerMode="dropdown"
@@ -68,7 +76,8 @@
         android:layout_alignParentStart="false"
         android:layout_marginTop="30dp"
         android:nestedScrollingEnabled="true"
-        android:gravity="center_vertical|center_horizontal" />
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:gravity="center" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -78,25 +87,33 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/spinner3"
         android:layout_centerVertical="true"
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:entries="@array/fuel_array"
         android:prompt="@string/fuel_prompt"
         android:spinnerMode="dropdown"
         android:layout_alignWithParentIfMissing="true"
         android:nestedScrollingEnabled="true"
-        android:gravity="center_vertical|center_horizontal" />
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:gravity="center" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/apply"
         android:id="@+id/button3"
+        android:layout_marginTop="30dp"
+
         android:clickable="true"
-        android:background="#2153c5"
+        android:background="@drawable/buttonshape"
         android:onClick="sendMessage"
+        android:layout_below="@+id/spinner4"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/spinner4"
-        android:layout_alignEnd="@+id/spinner4" />
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentEnd="false" />
 
 </RelativeLayout>
+</ScrollView>

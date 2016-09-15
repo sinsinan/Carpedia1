@@ -2,47 +2,339 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sin.com.carpedia.DetailsActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:adjustViewBounds="true"
-        android:maxWidth="200dp"
-        android:maxHeight="180dp"
-        android:scaleType="fitCenter"
-        android:focusable="false"
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="com.sin.com.carpedia.DetailsActivity"
+            android:nestedScrollingEnabled="false">
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="15dp"
+                android:id="@+id/imageCard">
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="200dp"
+                    android:maxHeight="180dp"
+                    android:scaleType="fitCenter"
+                    android:focusable="false"
+
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:nestedScrollingEnabled="false" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="15dp"
+                android:id="@+id/nameCard"
+                android:layout_below="@+id/imageCard"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/companyDetails"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:paddingLeft="5dp"
+                        android:textColor="#CC0033"
+                        android:textSize="35sp"
+                        android:nestedScrollingEnabled="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:id="@+id/nameDetails"
+                        android:layout_below="@+id/companyDetails"
+                        android:paddingLeft="5dp"
+                        android:textColor="#3399FF"
+                        android:textSize="30sp"
+                        android:paddingTop="10dp"
+                        android:nestedScrollingEnabled="false" />
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/priceDetails"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/nameDetails"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:textSize="28sp"
+                        android:textColor="#fd5c5c5c"
+                        android:nestedScrollingEnabled="false" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+card_view:cardCornerRadius="15dp"
+android:id="@+id/detailsCard"
+android:layout_below="@+id/nameCard"
+android:layout_marginTop="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView"
-        android:layout_below="@id/imageView"
-        android:textSize="33sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeDetails"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="5dp"
+            android:textColor="#CC0033"
+            android:textSize="22sp"
+            android:paddingTop="10dp"
+            android:text="Type"
+            android:paddingLeft="5dp"
+            android:nestedScrollingEnabled="false"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView2"
-        android:layout_below="@id/textView"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeInfo"
+            android:layout_alignBottom="@+id/typeDetails"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:textSize="22sp"
+            android:textColor="#3399FF"
+            android:nestedScrollingEnabled="false" />
 
-        android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuel"
+            android:id="@+id/Fuel"
+            android:layout_below="@+id/typeDetails"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="5dp"
+            android:textColor="#CC0033"
+            android:textSize="22sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:nestedScrollingEnabled="false"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fuelDetails"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/Fuel"
+            android:layout_below="@+id/typeDetails"
+            android:textSize="22sp"
+            android:textColor="#3399FF"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mileage"
+            android:id="@+id/Mileage"
+            android:layout_below="@+id/Fuel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="10dp"
+            android:textSize="22sp"
+            android:textColor="#CC0033"
+            android:paddingLeft="5dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mileageDetails"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/Mileage"
+            android:layout_below="@+id/Fuel"
+            android:textSize="22sp"
+            android:textColor="#3399FF"
+            android:paddingTop="10dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transmission"
+            android:id="@+id/Transmission"
+            android:layout_below="@+id/Mileage"
+            android:layout_alignParentLeft="true"
+
+            android:paddingTop="10dp"
+            android:textColor="#CC0033"
+            android:textSize="22sp"
+            android:paddingLeft="5dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/transmissionDetails"
+            android:layout_alignRight="@+id/Transmission"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/Mileage"
+            android:textColor="#3399FF"
+            android:textSize="22sp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engine"
+            android:id="@+id/Engine"
+            android:layout_below="@+id/Transmission"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#CC0033"
+            android:textSize="22sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/engineDetails"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/Engine"
+            android:layout_below="@+id/Transmission"
+            android:textColor="#3399FF"
+            android:textSize="22sp"
+            android:paddingTop="10dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bhpDetails"
+            android:layout_alignRight="@+id/BHP"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/Engine"
+            android:textColor="#3399FF"
+            android:textSize="22sp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BHP"
+            android:id="@+id/BHP"
+            android:layout_below="@+id/Engine"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#CC0033"
+            android:paddingTop="10dp"
+            android:textSize="22sp"
+            android:paddingLeft="5dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Torque"
+            android:id="@+id/Torque"
+            android:layout_below="@+id/BHP"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="10dp"
+            android:textColor="#CC0033"
+            android:textSize="22sp"
+            android:paddingLeft="5dp"
+            android:paddingEnd="5dp"
+            android:nestedScrollingEnabled="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/torqueDetails"
+            android:layout_alignParentRight="true"
+           android:layout_alignRight="@id/Torque"
+            android:layout_below="@+id/BHP"
+            android:textColor="#3399FF"
+            android:textSize="22sp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:nestedScrollingEnabled="false" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+    </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

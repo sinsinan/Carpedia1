@@ -33,6 +33,7 @@ public class CustomList extends ArrayAdapter<RowItem> {
         TextView company;
         TextView name;
         TextView price;
+        TextView temp;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -48,6 +49,7 @@ public class CustomList extends ArrayAdapter<RowItem> {
             holder.company = (TextView) convertView.findViewById(R.id.company);
             holder.price = (TextView) convertView.findViewById(R.id.price);
             holder.imageid = (ImageView) convertView.findViewById(R.id.imageid);
+            holder.temp = (TextView) convertView.findViewById(R.id.textView3);
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
@@ -56,6 +58,9 @@ public class CustomList extends ArrayAdapter<RowItem> {
         holder.company.setText(rowItem.getcompany());
         holder.price.setText(rowItem.getprice());
         holder.imageid.setImageResource(rowItem.getimageid());
+        holder.imageid.setTag(String.valueOf(rowItem.getimageid()));
+        String resource = (String) holder.imageid.getTag();
+        holder.temp.setText(resource);
 
         return convertView;
     }

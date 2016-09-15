@@ -152,7 +152,7 @@ public class DatabaseAccess {
     {
         List<String> namel = new ArrayList<String>();
 
-        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and COMPARE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
 
@@ -174,7 +174,7 @@ public class DatabaseAccess {
 
         List<String> companyl = new ArrayList<String>();
 
-        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and COMPARE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
 
@@ -192,7 +192,7 @@ public class DatabaseAccess {
     public List<Integer> getQuoteimageidf(String types,String companys,String prices,String transmissions,String fuels,Context context) {
         List<Integer> imageidl = new ArrayList<Integer>();
         String url;
-        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and COMPARE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             url = "car" + cursor.getString(0) + "";
@@ -212,7 +212,7 @@ public class DatabaseAccess {
 
         List<String> pricel = new ArrayList<String>();
 
-        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and PRICE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
+        Cursor cursor = database.rawQuery("select * from CARINFO where CATEGORY like '"+types+"' and COMPANY like '"+companys+"' and COMPARE "+prices+" and TRANSMISSION like '"+transmissions+"' and FUEL like '"+fuels+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
 
@@ -236,10 +236,10 @@ public class DatabaseAccess {
         Cursor cursor = database.rawQuery("select * from CARINFO where NAME like '"+name+"'", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            for (int i = 0; 1 < 14; i++) {
+            for (int i = 1; i < 14; i++) {
                 datalist.add(cursor.getString(i));
             }
-
+cursor.moveToNext();
 
         }
         cursor.close();

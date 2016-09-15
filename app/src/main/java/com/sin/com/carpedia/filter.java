@@ -18,6 +18,7 @@ Button button3;
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter);
+
         addListenerOnButton();
     }
     public void addListenerOnButton()
@@ -37,7 +38,7 @@ Button button3;
         Spinner mySpinner = (Spinner) findViewById(R.id.Spinner);
         String types = mySpinner.getSelectedItem().toString();
 
-               if(types.equals("None"))
+               if(types.equals("Any Type"))
                 {
                     types="%";
                 }
@@ -46,7 +47,7 @@ Button button3;
         Spinner mySpinner1 = (Spinner) findViewById(R.id.spinner1);
         String companys = mySpinner1.getSelectedItem().toString();
 
-                if(companys.equals("None"))
+                if(companys.equals("Any Company"))
                 {
                     companys="%";
                 }
@@ -54,34 +55,34 @@ Button button3;
         Spinner mySpinner2 = (Spinner) findViewById(R.id.spinner2);
         String prices = mySpinner2.getSelectedItem().toString();
 
-                if(prices.equals("Below 4 Lakhs"))
+                if(prices.equals("Below 5 Lakhs"))
                 {
-                    prices="between 0 and 400000";
+                    prices="between 0 and 500000";
                 }
-                else if (prices.equals("4 Lakhs - 9 Lakhs"))
+                else if (prices.equals("5 Lakhs - 10 Lakhs"))
                 {
-                    prices="between 400000 and 900000";
+                    prices="between 500000 and 1000000";
                 }
                 else if (prices.equals("10 Lakhs - 15 Lakhs"))
                 {
                     prices="between 1000000 and 1500000";
                 }
-                else if (prices.equals("16 Lakhs - 20 Lakhs"))
+                else if (prices.equals("15 Lakhs - 20 Lakhs"))
                 {
-                    prices="between 1600000 and 2000000";
+                    prices="between 1500000 and 2000000";
                 }
                 else if (prices.equals("Above 20 Lakhs"))
                 {
-                    prices="between 0 and 50000000";
+                    prices="between 2000000 and 50000000";
                 }
-                else if (prices.equals("None"))
+                else if (prices.equals("Any Price"))
                 {
                     prices="between 0 and 50000000";
                 }
         Spinner mySpinner3 = (Spinner) findViewById(R.id.spinner3);
         String transmissions = mySpinner3.getSelectedItem().toString();
 
-                if(transmissions.equals("None"))
+                if(transmissions.equals("Any Transmission"))
                 {
                     transmissions="%";
                 }
@@ -89,7 +90,7 @@ Button button3;
         Spinner mySpinner4 = (Spinner) findViewById(R.id.spinner4);
         String fuels = mySpinner4.getSelectedItem().toString();
 
-                if(fuels.equals("None"))
+                if(fuels.equals("Any Fuel"))
                 {
                     fuels="%";
                 }

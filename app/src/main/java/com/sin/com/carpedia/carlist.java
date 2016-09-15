@@ -76,7 +76,9 @@ public class carlist extends AppCompatActivity
                     R.layout.single_item, rowItems);
             listView.setAdapter(adapter);
 
-       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listView.setEmptyView(findViewById(R.id.layoutone).findViewById(android.R.id.empty));
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position,
@@ -84,6 +86,7 @@ public class carlist extends AppCompatActivity
             {
 
                 TextView tv = (TextView) v.findViewById(R.id.name);
+                TextView res = (TextView)v.findViewById(R.id.textView3);
                 // TextView tv1 = (TextView) v.findViewById(R.id.company);
                 // TextView tv2 = (TextView) v.findViewById(R.id.price);
 
@@ -94,12 +97,14 @@ public class carlist extends AppCompatActivity
 
 
                 String name = tv.getText().toString();
+                String resource = res.getText().toString();
                 //String company = tv1.getText().toString();
                 //String price = tv2.getText().toString();
                 //Toast.makeText(carlist.this,name,Toast.LENGTH_SHORT).show();
 
                 Bundle bundle = new Bundle();
                 bundle.putString("name",name);
+                bundle.putString("resource",resource);
                 //bundle.putString("company",company);
                 //bundle.putString("price",price);
 
@@ -116,7 +121,7 @@ public class carlist extends AppCompatActivity
                 // assuming string and if you want to get the value on click of list item
                 // do what you intend to do on click of listview row
             }
-        });*/
+        });
 
 
     }
